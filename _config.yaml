@@ -1,14 +1,13 @@
 # Profile section
 profile:
   first_name: Salim
-  last_name: OKAR
-  # picture: https://rodolfoferro.xyz/assets/images/profile.jpg   # Hosted picture
-  picture: static/img/user.png  # Local picture
+  last_name: O**R
+  picture: static/img/user.png
   contact:
     address_one: 75017 Paris
     address_two:
-    phone: 0678957739
-  email: salim.okar@live.fr
+    phone: 0678****39
+  email: salim.o**r@live.fr
   description: >
     Passionné par l'informatique, j'ai effectué une formation en Développement Web avant de me réorienter dans la Data et l'Intelligence Artificielle. Je me suis intéressé à ce métier car ce domaine va beaucoup se développer durant les prochaines années et parce que je suis fasciné par ce que l’intelligence artificielle peut apporter que ce soit dans le domaine médical, le secteur automobile, le secteur bancaire etc.. 
     Je suis moi même passionné par le secteur automobile qui pour certaines marques utilisent l’intelligence artificielle pour développer des voitures autonomes.
@@ -17,7 +16,7 @@ profile:
 # Social section
 social:
   github: https://github.com/SasaIA
-  linkedin: https://fr.linkedin.com/in/salim-okar
+  linkedin: https://#
 
 
 # Experience section

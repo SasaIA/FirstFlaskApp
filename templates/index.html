@@ -20,7 +20,6 @@
 
   <!-- Custom styles for this template -->
   <link href="static/css/resume.css" rel="stylesheet">
-  <link rel="shortcut icon" href="https://avatars3.githubusercontent.com/u/36435547" type="image/x-icon">
 
 </head>
 
@@ -28,7 +27,7 @@
 
   <div class="container">
 
-    <section class="resume-section p-3 justify-content-center" id="about">
+    <section class="resume-section p-2 justify-content-center" id="about">
       <div class="w-100">
         <div class="row justify-content-center">
           <div class="col-sm-3 col-lg-2">
@@ -49,7 +48,7 @@
           </div>
         </div>        
 
-        <p class="lead mb-3">{{ data.profile.description }}</p>
+        <p class="lead mb-2">{{ data.profile.description }}</p>
         <div class="social-icons">
         {% for key, value in data.social.items() %}
         {% if value != None %}
@@ -69,105 +68,90 @@
     </section>
 
     <hr>
-    
-    <span class="sizePrint">
 
-      <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
-        <div class="w-100">
-          <h2 class="mb-1">Skills</h2>
+    <section class="resume-section p-4 p-lg-3 align-items-center" id="skills">
+      <div class="w-100">
+        <h2 class="mb-1">Skills</h2>
 
-          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-          <ul class="list-inline dev-icons">
-            {% for item in data.tools %}
-            <li class="list-inline-item">
-              <i class="fab fa-{{ item }}"></i>
-            </li>
-            {% endfor %}
-          </ul>
-          
-          <div class="subheading mb-3">Extra skills / knowledge</div>
-          <ul class="fa-ul mb-0">
-            {% for item in data.extra_skills %}
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              {{ item }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-      </section>
-
-      <hr>
-
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-6 col-sm-6">
-            <section class="resume-section p-3 p-lg-5 justify-content-center" id="experience">
-              <div class="w-100">
-                <h2 class="mb-1">Experience</h2>
-      
-                {% for _, item in data.experience.items() %}
-                {% if _ != 'reference' %}
-                <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                  <div class="resume-content">
-                    <h3 class="mb-0">{{ item.position }}</h3>
-                    <div class="subheading mb-3">{{ item.company }}</div>
-                    <p>{{ item.description }}</p>
-                    {% if item.link %}
-                    <p><a href="{{ item.link }}">Reference link.</a></p>
-                    {% endif %}
-                  </div>
-                  <div class="resume-date text-md-right">
-                    <span class="text-primary">{{ item.from }} - {{ item.to }}</span>
-                  </div>
-                </div>
-                {% else %}
-                <p>For a detailed reference about this section, please visit <a href="{{ item }}" target="_blank">this link</a>.</p>
-                {% endif %}
-                {% endfor %}
-              </div>
-            </section>
-          </div>
+        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+        <ul class="list-inline dev-icons">
+          {% for item in data.tools %}
+          <li class="list-inline-item">
+            <i class="fab fa-{{ item }}"></i>
+          </li>
+          {% endfor %}
+        </ul>
         
-          <div class="col-lg-6 col-sm-6">
-            <section class="resume-section d-flex flex-column flex-md-row mb-5 align-items-center" id="education">
-              <div class="w-100">
-                <h2 class="mb-1">Education</h2>
-                
-                {% for _, item in data.education.items() %}
-                {% if _ != 'reference' %}
-                <div class="resume-item d-flex flex-column flex-md-row mb-5">
-                  <div class="resume-content">
-                    <h3 class="mb-0">{{ item.institution }}</h3>
-                    <div class="subheading mb-3">{{ item.program }}</div>
-                    <div>{{ item.description }}</div>
-                    <p>{{ item.gpa }}</p>
-                  </div>
-                  <div class="resume-date text-md-right">
-                    <span class="text-primary">{{ item.from }} - {{ item.to }}</span>
-                  </div>
+        <div class="subheading mb-3">Extra skills / knowledge</div>
+        <ul class="fa-ul mb-0">
+          {% for item in data.extra_skills %}
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            {{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+
+    <hr>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 col-sm-6">
+          <section class="resume-section p-5 p-lg-3 justify-content-center" id="experience">
+            <div class="w-100">
+              <h2 class="mb-1">Experience</h2>
+    
+              {% for _, item in data.experience.items() %}
+              {% if _ != 'reference' %}
+              <div class="resume-item d-flex flex-column mb-3">
+                <div class="resume-content">
+                  <h3 class="mb-0">{{ item.position }}</h3>
+                  <div class="subheading mb-3">{{ item.company }}</div>
+                  <p>{{ item.description }}</p>
+                  {% if item.link %}
+                  <p><a href="{{ item.link }}">Reference link.</a></p>
+                  {% endif %}
                 </div>
-                {% else %}
-                <p>For a detailed reference about this section, please visit <a href="{{ item }}" target="_blank">this link</a>.</p>
-                {% endif %}
-                {% endfor %}
+                <div class="resume-date text-md-left">
+                  <span class="text-primary">{{ item.from }} - {{ item.to }}</span>
+                </div>
               </div>
-            </section>
-          </div>
+              {% else %}
+              <p>For a detailed reference about this section, please visit <a href="{{ item }}" target="_blank">this link</a>.</p>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </section>
+        </div>
+      
+        <div class="col-lg-6 col-sm-6">
+          <section class="resume-section p-5 p-lg-3 justify-content-center" id="education">
+            <div class="w-100">
+              <h2 class="mb-1">Education</h2>
+              
+              {% for _, item in data.education.items() %}
+              {% if _ != 'reference' %}
+              <div class="resume-item d-flex flex-column mb-3">
+                <div class="resume-content">
+                  <h3 class="mb-0">{{ item.institution }}</h3>
+                  <div class="subheading mb-3">{{ item.program }}</div>
+                  <div>{{ item.description }}</div>
+                  <p>{{ item.gpa }}</p>
+                </div>
+                <div class="resume-date text-md-left">
+                  <span class="text-primary">{{ item.from }} - {{ item.to }}</span>
+                </div>
+              </div>
+              {% else %}
+              <p>For a detailed reference about this section, please visit <a href="{{ item }}" target="_blank">this link</a>.</p>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </section>
         </div>
       </div>
-    </span>
-    
-    
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="static/vendor/jquery/jquery.min.js"></script>
-  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="static/js/resume.min.js"></script>
+    </div>
 
 </body>
 
