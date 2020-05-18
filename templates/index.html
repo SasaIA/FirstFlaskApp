@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1>
+  <meta name="description" content="My CV.">
+  <meta name="author" content="Salim OKAR <salim.okar@live.fr>">
+
+  <title>CV - {{ data.profile.first_name }} {{ data.profile.last_name }}</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="static/css/resume.css" rel="stylesheet">
+  <link rel="shortcut icon" href="https://avatars3.githubusercontent.com/u/36435547" type="image/x-icon">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <section class="resume-section p-3 justify-content-center" id="about">
+      <div class="w-100">
+        <div class="row justify-content-center">
+          <div class="col-sm-3 col-lg-2">
+            <img class="img-fluid img-profile mx-auto d-block rounded-circle" src="{{ data.profile.picture }}" alt="">
+          </div>
+          <div class="col-sm-9 col-lg-5">
+            <h1 class="mb-1 text-center">{{ data.profile.first_name }}
+              <span class="text-primary">{{ data.profile.last_name }}</span>
+            </h1>
+            <div class="subheading mb-5 text-center">
+              {% for item in data.profile.contact.values() %}
+              {% if item != None %}
+              {{ item }} -
+              {% endif %}
+              {% endfor %}
+              <a href="mailto:{{ data.profile.email }}">{{ data.profile.email }}</a>
+            </div>
+          </div>
+        </div>        
+
+        <p class="lead mb-3">{{ data.profile.description }}</p>
+        <div class="social-icons">
+        {% for key, value in data.social.items() %}
+        {% if value != None %}
+          {% if key == 'website' %}
+          <a href="{{ data.social.website }}" target="_blank">
+            <i class="fas fa-globe-europe"></i>
+          </a>
+          {% else %}
+          <a href="{{ value }}" target="_blank">
+            <i class="fab fa-{{ key }}"></i>
+          </a>
+          {% endif %}
+        {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <hr>
+    
+    <span class="sizePrint">
+
+      <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+        <div class="w-100">
+          <h2 class="mb-1">Skills</h2>
+
+          <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+          <ul class="list-inline dev-icons">
+            {% for item in data.tools %}
+            <li class="list-inline-item">
+              <i class="fab fa-{{ item }}"></i>
+            </li>
+            {% endfor %}
+          </ul>
+          
+          <div class="subheading mb-3">Extra skills / knowledge</div>
+          <ul class="fa-ul mb-0">
+            {% for item in data.extra_skills %}
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              {{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+
+      <hr>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6">
+            <section class="resume-section p-3 p-lg-5 justify-content-center" id="experience">
+              <div class="w-100">
+                <h2 class="mb-1">Experience</h2>
+      
+                {% for _, item in data.experience.items() %}
+                {% if _ != 'reference' %}
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                  <div class="resume-content">
+                    <h3 class="mb-0">{{ item.position }}</h3>
+                    <div class="subheading mb-3">{{ item.company }}</div>
+                    <p>{{ item.description }}</p>
+                    {% if item.link %}
+                    <p><a href="{{ item.link }}">Reference link.</a></p>
+                    {% endif %}
+                  </div>
+                  <div class="resume-date text-md-right">
+                    <span class="text-primary">{{ item.from }} - {{ item.to }}</span>
+                  </div>
+                </div>
+                {% else %}
+                <p>For a detailed reference about this section, please visit <a href="{{ item }}" target="_blank">this link</a>.</p>
+                {% endif %}
+                {% endfor %}
+              </div>
+            </section>
+          </div>
+        
+          <div class="col-lg-6 col-sm-6">
+            <section class="resume-section d-flex flex-column flex-md-row mb-5 align-items-center" id="education">
+              <div class="w-100">
+                <h2 class="mb-1">Education</h2>
+                
+                {% for _, item in data.education.items() %}
+                {% if _ != 'reference' %}
+                <div class="resume-item d-flex flex-column flex-md-row mb-5">
+                  <div class="resume-content">
+                    <h3 class="mb-0">{{ item.institution }}</h3>
+                    <div class="subheading mb-3">{{ item.program }}</div>
+                    <div>{{ item.description }}</div>
+                    <p>{{ item.gpa }}</p>
+                  </div>
+                  <div class="resume-date text-md-right">
+                    <span class="text-primary">{{ item.from }} - {{ item.to }}</span>
+                  </div>
+                </div>
+                {% else %}
+                <p>For a detailed reference about this section, please visit <a href="{{ item }}" target="_blank">this link</a>.</p>
+                {% endif %}
+                {% endfor %}
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </span>
+    
+    
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="static/vendor/jquery/jquery.min.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="static/js/resume.min.js"></script>
+
+</body>
+
+</html>

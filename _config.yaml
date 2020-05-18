@@ -1,0 +1,99 @@
+# Profile section
+profile:
+  first_name: Salim
+  last_name: OKAR
+  # picture: https://rodolfoferro.xyz/assets/images/profile.jpg   # Hosted picture
+  picture: static/img/user.png  # Local picture
+  contact:
+    address_one: 75017 Paris
+    address_two:
+    phone: 0678957739
+  email: salim.okar@live.fr
+  description: >
+    Passionné par l'informatique, j'ai effectué une formation en Développement Web avant de me réorienter dans la Data et l'Intelligence Artificielle. Je me suis intéressé à ce métier car ce domaine va beaucoup se développer durant les prochaines années et parce que je suis fasciné par ce que l’intelligence artificielle peut apporter que ce soit dans le domaine médical, le secteur automobile, le secteur bancaire etc.. 
+    Je suis moi même passionné par le secteur automobile qui pour certaines marques utilisent l’intelligence artificielle pour développer des voitures autonomes.
+
+
+# Social section
+social:
+  github: https://github.com/SasaIA
+  linkedin: https://fr.linkedin.com/in/salim-okar
+
+
+# Experience section
+experience:
+  item0:
+    position: Founder
+    company: Imagine U'reself
+    from: Novembre 2017
+    to: Octobre 2019
+    description: >
+      Création de mon entreprise pour aider les nouvelles marques de prêt-à-porter à avoir de la visibilité.
+    
+  item1:
+    position: Stagiaire Développeur Web
+    company: Star Evenementia
+    from: Février 2017
+    to: Mars 2017
+    description: >
+      Création de site internet.
+  item2:
+    position: Stagiaire Développeur Web
+    company: Star Evenementia
+    from: Décembre 2016
+    to: Décembre 2016
+    description: >
+      Création de site internet.
+  item3:
+    position: Stagiaire Développeur Web
+    company: SPACE COM
+    from: Décembre 2015
+    to: Février 2016
+    description: >
+      Création de site internet.
+
+
+# Education section
+education:
+  item1:
+    institution: Ecole IA Microsoft powered by Simplon
+    program: Développeur Data & IA
+    description: Apprentissage des différentes technologies autour de la Data et de l'Intelligence Artificielle, Machine Learning, Deep Learning.
+    from: Mars 2020
+    to: Novembre 2021
+  item2:
+    institution: Konexio
+    program: Développeur Web et Web Mobile
+    description: Formation intensive autour des technologies JavaScript pour apprendre à créer des applications web.
+    from: Janvier 2019
+    to: Mai 2019
+  item3:
+    institution: Samsung Campus by Epitech
+    program: Piscine informatique de 3 semaines
+    description: Découverte de différent langage de programmation.
+    from: Octobre 2018
+    to: Octobre 2018
+
+
+# Skills section
+tools:
+  # Consider that the following are fa icons:
+  #   https://fontawesome.com/icons?d=gallery&s=brands
+  - python
+  - r-project
+  - github
+  - google-drive
+  - slack
+  - discord
+  - docker
+  - markdown
+  - html5
+  - css3-alt
+  - bootstrap
+  - react
+  - node
+  - js
+extra_skills:
+  - Web scraping and web automation
+  - Machine learning and deep learning
+  - Many Python packages – Flask, NumPy, matplotlib, Tensorflow, etc.
